@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aware Muslim</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>ContentBox</h1>
+            </div>
+            <div class="nav-buttons">
+                <!-- Search Button -->
+                <button id="searchBtn" class="nav-btn" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </svg>
+                </button>
+                <!-- Language Button -->
+                <button id="langBtn" class="nav-btn" aria-label="Change Language">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                </button>
+                <!-- Dark Mode Button -->
+                <button id="darkModeBtn" class="nav-btn" aria-label="Toggle Dark Mode">
+                    <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg id="moonIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Search Input (Hidden by default) -->
+        <div id="searchContainer" class="search-container hidden">
+            <input type="text" id="searchInput" placeholder="Search content..." class="search-input">
+        </div>
+    </nav>
+
+    <!-- Language Selector Modal (Hidden by default) -->
+    <div id="langModal" class="lang-modal hidden">
+        <div class="lang-modal-content">
+            <h2>Select Language</h2>
+            <button class="lang-option" data-lang="en">English</button>
+            <button class="lang-option" data-lang="ar">العربية (Arabic)</button>
+            <button class="lang-option" data-lang="id">Bahasa Indonesia</button>
+            <button class="lang-option" data-lang="hi">हिन्दी (Hindi)</button>
+            <button class="lang-option" data-lang="ru">Русский (Russian)</button>
+            <button class="lang-option" data-lang="es">Español (Spanish)</button>
+            <button class="lang-option" data-lang="ur">اردو (Urdu)</button>
+            <button id="closeLangModal" class="close-modal">Close</button>
+        </div>
+    </div>
+
+    <!-- Main Content - Boxes Grid -->
+    <main id="mainContent" class="main-content">
+        <div class="boxes-grid" id="boxesGrid">
+            <!-- Boxes will be generated dynamically here -->
+        </div>
+    </main>
+
+    <!-- Detail View (Hidden by default) -->
+    <div id="detailView" class="detail-view hidden">
+        <button id="backBtn" class="back-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back
+        </button>
+        <div class="detail-content">
+            <img id="detailImage" src="" alt="" class="detail-image">
+            <h1 id="detailTitle" class="detail-title"></h1>
+            <p id="detailParagraph" class="detail-paragraph"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
